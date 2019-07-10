@@ -19,7 +19,7 @@ defmodule ImaginariumWeb.Router do
     get "/", PageController, :index   
     
     #User creation test
-    get "/create/:messenger", CreateController, :make 
+    #get "/create/:messenger", CreateController, :make 
   end
 
   # Other scopes may use custom stacks.

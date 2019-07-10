@@ -12,12 +12,13 @@ defmodule Schema.Article do
     use Ecto.Schema
 
     schema "article" do
+        field :title, :string
         field :content, :string
-        field :date, :naive_datetime
         field :category, :integer
         field :chapter, :integer
         field :page, :integer
         has_many :user, Schema.User
+        has_many :tag, Schema.Tag
     end
 end
 
@@ -25,7 +26,7 @@ defmodule Schema.Sequence do
     use Ecto.Schema
 
     schema "sequence" do
-        field :name, :string
+        field :direction, :string
     end
 end
 
@@ -51,6 +52,6 @@ defmodule Schema.ArticleTag do
 
     schema "article_tag" do
         has_many :article, Schema.Article
-        has_many :tag, Schema.T  ag
+        has_many :tag, Schema.Tag
     end
 end
